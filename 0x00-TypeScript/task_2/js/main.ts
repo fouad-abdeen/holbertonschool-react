@@ -34,7 +34,11 @@ class Teacher implements TeacherInterface {
   }
 }
 
-const createEmployee = (salary: number | string) => {
+interface ICreateEmployee {
+  (salary: number | string): Teacher | Director;
+}
+
+const createEmployee: ICreateEmployee = (salary) => {
   if (typeof salary === "number" && salary < 500) {
     return new Teacher();
   } else {
