@@ -45,3 +45,19 @@ const createEmployee: ICreateEmployee = (salary) => {
     return new Director();
   }
 };
+
+const isDirector = (employee: any) => {
+  if (employee instanceof Director) {
+    return "Employee is a Director";
+  } else {
+    return "Employee isn't a Director";
+  }
+};
+
+const executeWork = (employee: Director | Teacher) => {
+  if (employee instanceof Director) {
+    return employee.workDirectorTasks();
+  } else {
+    return employee.workTeacherTasks();
+  }
+};
