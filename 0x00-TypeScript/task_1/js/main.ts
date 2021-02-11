@@ -4,7 +4,7 @@ interface Teacher {
   fullTimeEmployee: boolean;
   yearsOfExperience?: number;
   location: string;
-  [key: string]: any;
+  [propName: string]: any;
 }
 
 interface Directors extends Teacher {
@@ -15,25 +15,23 @@ interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-let printTeacher: printTeacherFunction;
-
-printTeacher = (firstName, lastName) => {
-  let fl = firstName.slice(0, 1);
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+  const fl: string = firstName.slice(0, 1);
   return `${fl}. ${lastName}`;
 };
 
-interface StudentConstructor {
-  new (firstName: string, lastName: string): IStudent;
-}
-
-interface IStudent {
+interface StudentClass {
+  firstName: string;
+  lastName: string;
   workOnHomework(): string;
   displayName(): string;
 }
 
-const StudentClass: StudentConstructor = class StudentClass
-  implements IStudent {
-  constructor(private firstName: string, private lastName: string) {}
+class StudentClass {
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
 
   workOnHomework() {
     return "Currently working";
@@ -42,4 +40,4 @@ const StudentClass: StudentConstructor = class StudentClass
   displayName() {
     return this.firstName;
   }
-};
+}
