@@ -2,27 +2,16 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  devServer: {
-    contentBase: path.join(__dirname, "dist"),
-    port: 8564,
-  },
   mode: "development",
   entry: {
-    main: [
-      "./modules/header/header.js",
-      "./modules/body/body.js",
-      "./modules/footer/footer.js",
-    ],
+    header: "./modules/header/header.js",
+    body: "./modules/body/body.js",
+    footer: "./modules/footer/footer.js",
   },
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "public"),
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: "Webpack Output",
-    }),
-  ],
   module: {
     rules: [
       {
@@ -34,5 +23,18 @@ module.exports = {
         type: "asset/resource",
       },
     ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "Webpack Output",
+    }),
+  ],
+  devServer: {
+    port: 8564,
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
   },
 };
