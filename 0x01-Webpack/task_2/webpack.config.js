@@ -6,8 +6,8 @@ module.exports = {
     main: path.resolve(__dirname, "./js/dashboard_main.js"),
   },
   output: {
-    filename: "bundle.js",
     path: path.resolve(__dirname, "public"),
+    filename: "bundle.js",
   },
   module: {
     rules: [
@@ -16,8 +16,10 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
+        test: /\.jpg$/,
+        use: {
+          loader: "file-loader",
+        },
       },
     ],
   },
