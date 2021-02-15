@@ -1,8 +1,6 @@
 namespace Subjects {
-  interface Teacher {
-    firstname: string;
+  export interface Teacher {
+    firstName: string;
     lastName: string;
   }
 }
-
-export default Teacher;
