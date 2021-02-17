@@ -17,7 +17,7 @@ function App() {
       <div className="App-footer">
         <hr />
         <i className="footer-text">
-          Copyright 2020 - {getFooterCopy(getFullYear())}
+          Copyright {getFullYear()} - {getFooterCopy(true)}
         </i>
       </div>
     </div>
