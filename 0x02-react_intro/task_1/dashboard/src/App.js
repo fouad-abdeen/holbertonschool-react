@@ -5,21 +5,21 @@ import { getFullYear, getFooterCopy } from "./utils";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="App-header">
         <img className="logo" alt="Holberton Logo" src={holberton_logo} />
         <h1 className="title">
           <strong> School dashboard </strong>
         </h1>
-      </header>
-      <body className="App-body">
+      </div>
+      <div className="App-body">
         <p> Login to access the full dashboard </p>
-      </body>
-      <footer className="App-footer">
+      </div>
+      <div className="App-footer">
         <hr />
         <i className="footer-text">
           Copyright 2020 - {getFooterCopy(getFullYear())}
         </i>
-      </footer>
+      </div>
     </div>
   );
 }
