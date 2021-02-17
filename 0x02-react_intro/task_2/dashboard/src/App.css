@@ -1,0 +1,48 @@
+.App {
+  font-family: sans-serif;
+  display: flex;
+  min-height: 82vh;
+  flex-direction: column;
+}
+
+.logo {
+  width: 12.5rem;
+  height: 13rem;
+}
+
+.title {
+  color: #e0354b;
+  display: inline-flex;
+  vertical-align: top;
+  margin-top: 2.5em;
+}
+
+.App-header {
+  border-bottom: 0.2em solid #e1354b;
+}
+
+.App-body {
+  margin-left: 2.5rem;
+  margin-top: 2.5rem;
+  flex: 1;
+}
+
+.App-footer {
+  text-align: center;
+  vertical-align: middle;
+  height: 2.5rem;
+  line-height: 2.5rem;
+}
+
+label {
+  cursor: pointer;
+}
+
+label,
+input {
+  margin: 0.15rem;
+}
+
+hr {
+  border: 1px solid #e1354b;
+}
