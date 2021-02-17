@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import Notifications from "./Notifications";
 import reportWebVitals from "./reportWebVitals";
-import './utils.test';
+import "./utils.test";
 
 ReactDOM.render(
   <React.StrictMode>
