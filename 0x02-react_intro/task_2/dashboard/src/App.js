@@ -19,11 +19,11 @@ function App() {
       <div className="App-body">
         <p>Login to access the full dashboard</p>
         <form>
-          <label for="email" onclick={selectEmail}>
+          <label htmlFor="email" onClick={selectEmail}>
             Email:
           </label>
           <input type="text" name="email" id="email" />
-          <label for="password" onclick={selectPassword}>
+          <label htmlFor="password" onClick={selectPassword}>
             Password:
           </label>
           <input type="password" name="password" id="password" />
