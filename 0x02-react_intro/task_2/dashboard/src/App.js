@@ -3,10 +3,14 @@ import holberton_logo from "./holberton-logo.jpg";
 import { getFullYear, getFooterCopy } from "./utils";
 
 function App() {
-  const myEmail = document.querySelector("#email");
-  const myPassword = document.querySelector("#password");
-  const selectEmail = () => myEmail.select();
-  const selectPassword = () => myPassword.select();
+  const selectEmail = () => {
+    const myEmail = document.querySelector("#email");
+    myEmail.select();
+  };
+  const selectPassword = () => {
+    const myPassword = document.querySelector("#password");
+    myPassword.select();
+  };
 
   return (
     <div className="App">
