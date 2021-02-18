@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, "./src/index.js"),
+    main: path.resolve(__dirname, "../src/index.js"),
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -10,7 +10,7 @@ module.exports = {
   },
   devServer: {
     hot: true,
-    port: 3000,
+    port: 8564,
   },
   module: {
     rules: [
