@@ -1,17 +1,21 @@
+const webpack = require("webpack");
 const path = require("path");
 
 module.exports = {
+  mode: "production",
   entry: {
     main: path.resolve(__dirname, "../src/index.js"),
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "../dist"),
     filename: "bundle.js",
   },
   devServer: {
+    contentBase: path.resolve(__dirname, "../dist"),
     hot: true,
-    port: 8564,
+    open: true,
   },
+  devtool: "inline-source-map",
   module: {
     rules: [
       {
@@ -31,7 +35,20 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"],
+      },
     ],
   },
-  devtool: 'inline-source-map'
+  resolve: {
+    extensions: ["*", ".js", ".jsx"],
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.ProvidePlugin({
+      React: "react",
+    }),
+  ],
 };

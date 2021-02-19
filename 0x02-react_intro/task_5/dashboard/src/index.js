@@ -1,8 +1,17 @@
-const body = document.getElementById('root');
-const h1 = document.createElement("h1");
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App/App";
+import Notifications from "./Notifications/Notifications";
+import "./utils/utilsCustomTest";
 
-h1.innerHTML = "Holberton School";
+ReactDOM.render(
+  <React.StrictMode>
+    <div className="root-notifications">
+      <Notifications />
+    </div>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
 
-document.addEventListener("DOMContentLoaded", () => {
- body.appendChild(h1);
-});
+module.hot.accept();
