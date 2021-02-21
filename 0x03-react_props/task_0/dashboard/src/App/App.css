@@ -1,0 +1,22 @@
+.App {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.App-header {
+  border-bottom: 0.2em solid #e1354b;
+}
+
+.App-body {
+  margin-left: 2.5rem;
+  margin-top: 2.5rem;
+  flex: 1;
+}
+
+.App-footer {
+  text-align: center;
+  vertical-align: middle;
+  height: 2.5rem;
+  line-height: 2.5rem;
+}
