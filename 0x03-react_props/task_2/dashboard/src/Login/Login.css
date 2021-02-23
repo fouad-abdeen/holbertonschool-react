@@ -1,0 +1,8 @@
+label {
+  cursor: pointer;
+}
+
+label,
+input {
+  margin: 0.15rem;
+}
