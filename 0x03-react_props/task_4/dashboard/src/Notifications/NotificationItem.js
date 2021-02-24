@@ -30,9 +30,8 @@ const htmlObjectShape = PropTypes.shape({
 NotificationItem.propTypes = {
   type: PropTypes.string,
   html: htmlObjectShape,
-}
+};
 
 NotificationItem.defaultProps = {
   type: "default",
-  html: PropTypes.htmlShape,
 };
