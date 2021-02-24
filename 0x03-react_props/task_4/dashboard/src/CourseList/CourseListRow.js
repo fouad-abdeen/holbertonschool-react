@@ -33,7 +33,7 @@ export default function CourseListRow(props) {
 
 CourseListRow.propTypes = {
   isHeader: PropTypes.bool,
-  textFirstCell: PropTypes.string,
+  textFirstCell: PropTypes.string.isRequired,
   textSecondCell: PropTypes.string,
 };
 
