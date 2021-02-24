@@ -15,11 +15,16 @@ describe("App Component Rendering", () => {
     expect(wrapper.find("Footer").exists()).toBe(true);
   });
 
-  it("should render CourseList & Login correctly", () => {
-    const wrapper1 = shallow(<App />);
-    const wrapper2 = shallow(<App isLoggedIn = {true}/>);
-    expect(wrapper1.find("CourseList").exists()).toBe(false);
-    expect(wrapper2.find("Login").exists()).toBe(false);
-    expect(wrapper2.find("CourseList").exists()).toBe(true);
+  it("should render the correct html when isLoggedIn equal to false", () => {
+    const wrapper = shallow(<App isLoggedIn={false}/>);
+
+    expect(wrapper.find("CourseList").exists()).toBe(false);
+  });
+
+  it("should render the correct html when isLoggedIn equal to true", () => {
+    const wrapper = shallow(<App isLoggedIn={true} />);
+
+    expect(wrapper.find("Login").exists()).toBe(false);
+    expect(wrapper.find("CourseList").exists()).toBe(true);
   });
 });
