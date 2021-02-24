@@ -23,11 +23,16 @@ export default function NotificationItem(props) {
     );
 }
 
+const htmlObjectShape = PropTypes.shape({
+  __html: PropTypes.string,
+});
+
 NotificationItem.propTypes = {
   type: PropTypes.string,
-  html: PropTypes.object,
-};
+  html: htmlObjectShape,
+}
 
 NotificationItem.defaultProps = {
   type: "default",
+  html: PropTypes.htmlShape,
 };
