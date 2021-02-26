@@ -56,10 +56,10 @@ function App(props) {
 
 export default App;
 
-CourseListRow.propTypes = {
+App.propTypes = {
   isLoggedIn: PropTypes.bool,
 };
 
-CourseListRow.defaultProps = {
+App.defaultProps = {
   isLoggedIn: false,
 };
