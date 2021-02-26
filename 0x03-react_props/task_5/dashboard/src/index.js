@@ -5,7 +5,7 @@ import "./utils/utilsCustomTest";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App isLoggedIn = {false}/>
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
