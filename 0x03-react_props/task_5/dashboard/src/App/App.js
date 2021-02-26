@@ -6,7 +6,6 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Login from "../Login/Login";
 import CourseList from "../CourseList/CourseList";
-import CourseListRow from "../CourseList/CourseListRow";
 import { getLatestNotification } from "../utils/utils";
 
 function App(props) {
