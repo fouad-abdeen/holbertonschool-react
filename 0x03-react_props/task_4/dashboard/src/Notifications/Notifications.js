@@ -56,6 +56,6 @@ Notifications.propTypes = {
   displayDrawer: PropTypes.bool,
 };
 
-Notifications.defaultTypes = {
+Notifications.defaultProps = {
   displayDrawer: false,
 };
