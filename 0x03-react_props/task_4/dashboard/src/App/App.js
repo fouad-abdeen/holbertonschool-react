@@ -21,7 +21,7 @@ function App(props) {
         <div className="App-header">
         <Header />
         <div className="display-drawer" >
-        <Notifications  displayDrawer = {false}/>
+        <Notifications />
         </div>
         </div>
         <div className="App-body">
