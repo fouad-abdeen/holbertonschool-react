@@ -65,7 +65,7 @@ export default function Notifications(props) {
               {props.listNotifications.map((n) => {
                 return (
                   <NotificationItem
-                    key={n.id}
+                    key={n.id.toString()}
                     type={n.type}
                     value={n.value}
                     html={n.html}
