@@ -32,7 +32,7 @@ export default function CourseList(props) {
           {props.listCourses.map((c) => {
             return (
               <CourseListRow
-                key={c.id}
+                key={c.id.toString()}
                 textFirstCell={c.name}
                 textSecondCell={c.credit.toString()}
                 isHeader={false}
