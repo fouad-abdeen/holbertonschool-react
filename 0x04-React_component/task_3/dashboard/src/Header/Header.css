@@ -1,0 +1,11 @@
+.logo {
+  width: 12.5rem;
+  height: 13rem;
+}
+
+.title {
+  color: #e0354b;
+  display: inline-flex;
+  vertical-align: top;
+  margin-top: 2.5em;
+}
