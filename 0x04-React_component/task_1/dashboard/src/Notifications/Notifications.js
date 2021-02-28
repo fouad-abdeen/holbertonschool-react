@@ -26,7 +26,7 @@ export default function Notifications(props) {
                 outline: "none",
                 cursor: "pointer",
               }}
-              onClick={this.logToConsole}
+              onClick={logToConsole}
             >
               <img
                 alt="Close"
