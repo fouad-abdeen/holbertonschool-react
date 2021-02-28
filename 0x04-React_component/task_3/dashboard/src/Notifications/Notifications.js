@@ -30,7 +30,7 @@ class Notifications extends React.Component {
                   outline: "none",
                   cursor: "pointer",
                 }}
-                onClick={logToConsole}
+                onClick={this.logToConsole}
               >
                 <img
                   alt="Close"
