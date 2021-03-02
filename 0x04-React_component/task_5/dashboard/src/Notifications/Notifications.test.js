@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { mount, shallow } from "enzyme";
 import Notifications from "./Notifications";
 
 describe("Notifications Component Rendering", () => {
@@ -62,5 +62,51 @@ describe("Notifications Component Rendering", () => {
     expect(wrapper.find("div.menuItem").exists()).toBe(true);
 
     expect(wrapper.find("div.Notifications").exists()).toBe(false);
+  });
+
+  it("should not rerender when the list is the same", () => {
+    const listNotifications = [
+      { id: 1, type: "default", value: "New course available" },
+      { id: 2, type: "urgent", value: "New resume available" },
+    ];
+
+    const wrapper = mount(
+      <Notifications listNotifications={listNotifications} />
+    );
+
+    const shouldUpdate = wrapper
+      .instance()
+      .shouldComponentUpdate({ listNotifications: listNotifications });
+
+    expect(shouldUpdate).toBe(false);
+  });
+
+  it("should rerender when the list is longer than the previous one", () => {
+    const listNotifications = [
+      { id: 1, type: "default", value: "New course available" },
+    ];
+
+    const newlistNotifications = [
+      { id: 1, type: "default", value: "New course available" },
+      { id: 2, type: "urgent", value: "New resume available" },
+    ];
+
+    const emptylistNotifications = [];
+
+    const wrapper = mount(
+      <Notifications listNotifications={listNotifications} />
+    );
+
+    const shouldUpdate = wrapper
+      .instance()
+      .shouldComponentUpdate({ listNotifications: newlistNotifications });
+
+    expect(shouldUpdate).toBe(true);
+
+    const $houldUpdate = wrapper
+      .instance()
+      .shouldComponentUpdate({ listNotifications: emptylistNotifications });
+
+    expect($houldUpdate).toBe(false);
   });
 });
