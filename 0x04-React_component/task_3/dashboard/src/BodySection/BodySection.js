@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function BodySection(props) {
   return (
@@ -8,3 +9,10 @@ export default function BodySection(props) {
     </div>
   );
 }
+BodySection.propTypes = {
+  title: PropTypes.string,
+};
+
+BodySection.defaultProps = {
+  title: "",
+};
