@@ -1,0 +1,15 @@
+.Notifications {
+  font-size: large;
+  border: 0.15em dotted #e1354b;
+  padding: 0.375rem;
+  margin-top: 2rem;
+}
+
+.menuItem {
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: 0;
+  margin-top: 0.625rem;
+  margin-right: 0.625rem;
+}
