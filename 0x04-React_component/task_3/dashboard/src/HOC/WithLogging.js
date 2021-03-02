@@ -6,7 +6,7 @@ const WithLogging = (WrappedComponent) => {
       console.log(`Component ${getDisplayName(WrappedComponent)} is mounted`);
     }
     componentWillUnmount() {
-      console.log(`Component ${getDisplayName(WrappedComponent)} is unmounted`);
+      console.log(`Component ${getDisplayName(WrappedComponent)} is going to unmount`);
     }
     render() {
       return <WrappedComponent />;
