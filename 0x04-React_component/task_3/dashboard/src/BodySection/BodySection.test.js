@@ -9,17 +9,21 @@ describe("BodySection Component Rendering", () => {
 
   it("should render the correct html", () => {
     const wrapper = shallow(
-      <BodySection title="test">
-        <p>test</p>
+      <BodySection title="test title">
+        <p>test children node</p>
       </BodySection>
     );
 
     expect(wrapper.find("div.bodySection").exists()).toBe(true);
 
-    expect(wrapper.find("h2").exists()).toBe(true);
-    expect(wrapper.find("div.bodySection").childAt(0).text()).toEqual("test");
+    expect(wrapper.find("h2")).toHaveLength(1);
+    expect(wrapper.find("div.bodySection").childAt(0).text()).toEqual(
+      "test title"
+    );
 
-    expect(wrapper.find("p").exists()).toBe(true);
-    expect(wrapper.find("div.bodySection").childAt(1).text()).toEqual("test");
+    expect(wrapper.find("p")).toHaveLength(1);
+    expect(wrapper.find("div.bodySection").childAt(1).text()).toEqual(
+      "test children node"
+    );
   });
 });
