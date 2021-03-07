@@ -27,7 +27,7 @@ describe("Notifications Component Rendering", () => {
   });
 
   it("should render the correct html when displayDrawer is true and listNotifications contains data", () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <Notifications
         displayDrawer={true}
         listNotifications={[
@@ -47,13 +47,7 @@ describe("Notifications Component Rendering", () => {
       "Here is the list of notifications"
     );
 
-    expect(wrapper.find("ul").childAt(0).text()).toEqual(
-      "<NotificationItem />"
-    );
-
-    expect(wrapper.find("div.menuItem").exists()).toBe(true);
-
-    expect(wrapper.find("div.Notifications").exists()).toBe(true);
+    expect(wrapper.find("div")).toHaveLength(2);
   });
 
   it("should render the correct html when displayDrawer is false", () => {

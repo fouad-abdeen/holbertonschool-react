@@ -30,11 +30,10 @@ describe("Notifications Component Rendering", () => {
 
     expect(wrapper1.find("div")).toHaveLength(2);
     expect(wrapper2.find("div")).toHaveLength(2);
-
   });
 
   it("should render the correct html when displayDrawer is true and listNotifications contains data", () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <Notifications
         displayDrawer={true}
         listNotifications={[
@@ -52,10 +51,6 @@ describe("Notifications Component Rendering", () => {
 
     expect(wrapper.find("p").text()).toEqual(
       "Here is the list of notifications"
-    );
-
-    expect(wrapper.find("ul").childAt(0).text()).toEqual(
-      "<NotificationItem />"
     );
 
     expect(wrapper.find("div")).toHaveLength(2);
