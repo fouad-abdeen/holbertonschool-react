@@ -5,10 +5,16 @@ import holberton_logo from "../assets/holberton-logo.jpg";
 export default function Header() {
   return (
     <>
-      <img className={css(styles.logo)} alt="Holberton Logo" src={holberton_logo} />
-      <h1 className={css(styles.title)}>
-        <strong> School dashboard </strong>
-      </h1>
+      <header>
+        <img
+          className={css(styles.logo)}
+          alt="Holberton Logo"
+          src={holberton_logo}
+        />
+        <h1 className={css(styles.title)}>
+          <strong> School dashboard </strong>
+        </h1>
+      </header>
     </>
   );
 }

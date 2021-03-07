@@ -1,6 +1,15 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
 import Notifications from "./Notifications";
+import { StyleSheetTestUtils } from "aphrodite";
+
+beforeEach(() => {
+  StyleSheetTestUtils.suppressStyleInjection();
+});
+
+afterEach(() => {
+  StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+});
 
 describe("Notifications Component Rendering", () => {
   it("should render without crashing", () => {
@@ -19,11 +28,9 @@ describe("Notifications Component Rendering", () => {
     expect(wrapper1.find("p").text()).toEqual("No new notification for now");
     expect(wrapper2.find("p").text()).toEqual("No new notification for now");
 
-    expect(wrapper1.find("div.menuItem").exists()).toBe(true);
-    expect(wrapper2.find("div.menuItem").exists()).toBe(true);
+    expect(wrapper1.find("div")).toHaveLength(2);
+    expect(wrapper2.find("div")).toHaveLength(2);
 
-    expect(wrapper1.find("div.Notifications").exists()).toBe(true);
-    expect(wrapper2.find("div.Notifications").exists()).toBe(true);
   });
 
   it("should render the correct html when displayDrawer is true and listNotifications contains data", () => {
@@ -51,17 +58,13 @@ describe("Notifications Component Rendering", () => {
       "<NotificationItem />"
     );
 
-    expect(wrapper.find("div.menuItem").exists()).toBe(true);
-
-    expect(wrapper.find("div.Notifications").exists()).toBe(true);
+    expect(wrapper.find("div")).toHaveLength(2);
   });
 
   it("should render the correct html when displayDrawer is false", () => {
     const wrapper = shallow(<Notifications displayDrawer={false} />);
 
-    expect(wrapper.find("div.menuItem").exists()).toBe(true);
-
-    expect(wrapper.find("div.Notifications").exists()).toBe(false);
+    expect(wrapper.find("div")).toHaveLength(1);
   });
 
   it("should not rerender when the list is the same", () => {

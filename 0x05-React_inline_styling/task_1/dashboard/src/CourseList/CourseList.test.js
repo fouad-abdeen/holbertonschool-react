@@ -1,6 +1,15 @@
 import React from "react";
 import { shallow } from "enzyme";
 import CourseList from "./CourseList";
+import { StyleSheetTestUtils } from "aphrodite";
+
+beforeEach(() => {
+  StyleSheetTestUtils.suppressStyleInjection();
+});
+
+afterEach(() => {
+  StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+});
 
 describe("CourseList Component Rendering", () => {
   it("should render without crashing", () => {

@@ -1,6 +1,15 @@
 import React from "react";
 import { shallow } from "enzyme";
 import App from "./App";
+import { StyleSheetTestUtils } from "aphrodite";
+
+beforeEach(() => {
+  StyleSheetTestUtils.suppressStyleInjection();
+});
+
+afterEach(() => {
+  StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+});
 
 describe("App Component Rendering", () => {
   it("should render without crashing", () => {
