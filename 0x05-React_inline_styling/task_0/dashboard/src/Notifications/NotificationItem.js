@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./NotificationItem.css";
 
-class NotificationItem extends React.PureComponent {
+class NotificationItem extends React.Component {
   render() {
     if (this.props.html !== undefined)
       return (
@@ -39,4 +39,4 @@ NotificationItem.defaultProps = {
   type: "default",
 };
 
-export default NotificationItem;
+export default React.memo(NotificationItem);
