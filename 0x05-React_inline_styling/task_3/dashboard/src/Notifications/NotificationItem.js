@@ -6,7 +6,6 @@ class NotificationItem extends React.Component {
   render() {
     if (this.props.html !== undefined)
       return (
-        <>
           <li
             className={css(
               this.props.type === "default" ? styles.default : styles.urgent
@@ -16,12 +15,9 @@ class NotificationItem extends React.Component {
             dangerouslySetInnerHTML={this.props.html}
             onClick={this.props.markAsRead}
           />
-          <hr className={css(styles.listItemBorder)} />
-        </>
       );
     else
       return (
-        <>
           <li
             className={css(
               this.props.type === "default" ? styles.default : styles.urgent
@@ -32,8 +28,6 @@ class NotificationItem extends React.Component {
           >
             {this.props.value}
           </li>
-          <hr className={css(styles.listItemBorder)} />
-        </>
       );
   }
 }
@@ -57,20 +51,24 @@ const styles = StyleSheet.create({
   default: {
     color: "blue",
     cursor: "pointer",
-    width: "100%",
-    fontSize: "20px",
-    padding: "10px 8px",
+    "@media (max-width: 899px)": {
+      width: "100%",
+      fontSize: "20px",
+      padding: "10px 8px",
+      borderBottom: "1px solid black",
+      padding: "10px 8px",
+    },
   },
 
   urgent: {
     color: "red",
     cursor: "pointer",
-    width: "100%",
-    fontSize: "20px",
-    padding: "10px 8px",
-  },
-
-  listItemBorder: {
-    borderColor: "black",
+    "@media (max-width: 899px)": {
+      width: "100%",
+      fontSize: "20px",
+      padding: "10px 8px",
+      borderBottom: "1px solid black",
+      padding: "10px 8px",
+    },
   },
 });

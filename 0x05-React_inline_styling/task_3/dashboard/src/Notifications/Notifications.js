@@ -27,7 +27,7 @@ class Notifications extends React.Component {
         !this.props.listNotifications.length
       )
         return (
-          <div className={css(styles.wrapper)}>
+          <>
             <div className={css(styles.Notifications)}>
               <button
                 aria-label="close"
@@ -48,11 +48,11 @@ class Notifications extends React.Component {
               </button>
               <p>No new notification for now</p>
             </div>
-          </div>
+          </>
         );
       else
         return (
-          <div className={css(styles.wrapper)}>
+          <>
             <div className={css(styles.Notifications)}>
               <button
                 aria-label="close"
@@ -87,7 +87,7 @@ class Notifications extends React.Component {
                 })}
               </ul>
             </div>
-          </div>
+          </>
         );
     } else
       return (
@@ -113,22 +113,24 @@ Notifications.defaultProps = {
 const styles = StyleSheet.create({
   Notifications: {
     marginTop: "2rem",
+    "@media (min-width: 900px)": {
+    border: "0.15em dotted #e1354b",
+    padding: "0.375rem",
+    },
+    "@media (max-width: 899px)": {
+      width: '95vw',
+      height: '95vh',
+      margin: '0',
+      zIndex: '10',
+    },
   },
 
   list: {
     listStyleType: "none",
   },
 
-  listItemBorder: {
-    borderColor: "black",
-  },
-
   menuItem: {
     display: "flex",
     justifyContent: "flex-end",
-  },
-
-  wrapper: {
-    minHeight: "100vh",
   },
 });
