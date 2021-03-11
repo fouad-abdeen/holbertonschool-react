@@ -8,6 +8,10 @@ export default function CourseListRow(props) {
 
   const [checked, setChecked] = useState(false);
 
+  const handleCheckbox = () => {
+    setChecked(!checked);
+  };
+
   if (props.isHeader === true) {
     if (props.textSecondCell == null) {
       rowContent1 = <th colSpan={2}>{props.textFirstCell}</th>;
@@ -19,12 +23,7 @@ export default function CourseListRow(props) {
     rowContent1 = (
       <td className={css(checked ? styles.rowChecked : styles.row)}>
         {props.textFirstCell}
-        <input
-          type="checkbox"
-          onChange={() => {
-            setChecked(!checked);
-          }}
-        />
+        <input type="checkbox" onChange={handleCheckbox} />
       </td>
     );
     rowContent2 = (
