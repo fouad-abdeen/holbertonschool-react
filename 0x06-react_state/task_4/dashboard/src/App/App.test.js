@@ -21,7 +21,7 @@ describe("App Component Rendering", () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find("Notifications").exists()).toBe(true);
     expect(wrapper.find("Header").exists()).toBe(true);
-    expect(wrapper.find("Login").exists()).toBe(true);
+    expect(wrapper.find("Login").exists()).toBe(false);
     expect(wrapper.find("Footer").exists()).toBe(true);
   });
 
