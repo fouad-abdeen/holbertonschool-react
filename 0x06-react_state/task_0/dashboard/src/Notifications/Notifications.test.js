@@ -107,4 +107,20 @@ describe("Notifications Component Rendering", () => {
 
     expect($houldUpdate).toBe(false);
   });
+    
+  it("should have handleDisplayDrawer & handleHideDrawer", () => {
+    const displayDrawer = jest.fn();
+    const hideDrawer = jest.fn();
+    const wrapper = shallow(
+      <Notifications
+        handleDisplayDrawer={displayDrawer}
+        handleHideDrawer={hideDrawer}
+      />
+    );
+
+    wrapper.simulate("click");
+
+    expect(displayDrawer).toHaveBeenCalledTimes(1);
+    expect(hideDrawer).toHaveBeenCalledTimes(0);
+  });
 });
