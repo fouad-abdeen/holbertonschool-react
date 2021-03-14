@@ -50,13 +50,13 @@ class App extends React.Component {
     );
   }
 
-  handleDisplayDrawer = () => {
+  handleDisplayDrawer() {
     this.setState({ displayDrawer: true });
-  };
+  }
 
-  handleHideDrawer = () => {
+  handleHideDrawer() {
     this.setState({ displayDrawer: false });
-  };
+  }
 
   render() {
     let bodyContent;
