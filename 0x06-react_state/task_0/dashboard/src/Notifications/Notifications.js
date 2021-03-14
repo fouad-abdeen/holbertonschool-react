@@ -18,6 +18,9 @@ class Notifications extends React.Component {
   }
 
   render() {
+    const handleDisplayDrawer = this.props.handleDisplayDrawer;
+    const handleHideDrawer = this.props.handleHideDrawer;
+    
     if (this.props.displayDrawer === true) {
       if (
         !Array.isArray(this.props.listNotifications) ||
@@ -60,7 +63,7 @@ class Notifications extends React.Component {
                   outline: "none",
                   cursor: "pointer",
                 }}
-                onClick={this.props.handleHideDrawer}
+                onClick={handleHideDrawer}
               >
                 <img
                   alt="Close"
@@ -88,7 +91,7 @@ class Notifications extends React.Component {
     } else
       return (
         <div
-          onClick={this.props.handleDisplayDrawer}
+          onClick={handleDisplayDrawer}
           className={css(styles.menuItem)}
           id="notifications-opener"
         >
