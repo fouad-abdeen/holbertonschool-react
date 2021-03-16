@@ -1,7 +1,10 @@
-import { getIn } from "immutable";
+import { getIn, Map } from "immutable";
+
+let result;
 
 const accessImmutableObject = (object, array) => {
-  return getIn(object, array, undefined);
+  result = getIn(object, array, undefined);
+  return typeof result === "object" ? Map(result) : result;
 };
 
 export default accessImmutableObject;
