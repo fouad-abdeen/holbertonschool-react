@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import { Map } from 'immutable';
 
 export const map = Map({
