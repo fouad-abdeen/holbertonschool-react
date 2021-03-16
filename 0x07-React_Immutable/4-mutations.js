@@ -1,4 +1,4 @@
-import { Map } from 'immutable';
+import { Map, setIn } from 'immutable';
 
 export const map = Map({
   1: 'Liam',
@@ -9,4 +9,4 @@ export const map = Map({
   6: 'Lucas',
 });
 
-export const map2 = map.merge(Map({ 2: 'Benjamin', 4: 'Oliver' }));
+export const map2 = setIn(setIn(map, ['2'], 'Benjamin'), ['4'], 'Oliver');
