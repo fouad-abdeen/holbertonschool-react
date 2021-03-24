@@ -4,7 +4,7 @@ _Resources 🔽_
 
 Normalizr: https://github.com/paularmstrong/normalizr
 
-           https://github.com/paularmstrong/normalizr/blob/master/docs/api.md
+Normalizr API: https://github.com/paularmstrong/normalizr/blob/master/docs/api.md
            
 Normalizing State Shape: https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape
 
